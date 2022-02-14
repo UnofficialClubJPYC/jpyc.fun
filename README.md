@@ -5,7 +5,8 @@
 reactです。詳細はネットで調べてください。
 
 ```bash
-git clone xxxx
+git clone git@github.com:UnofficialClubJPYC/jpyc.fun.git
+cp .env.sample .env    # .envでbuild directoryを変更しています
 npm i # パッケージインストール
 # ごにょごにょ
 npm run start # localテスト環境起動
