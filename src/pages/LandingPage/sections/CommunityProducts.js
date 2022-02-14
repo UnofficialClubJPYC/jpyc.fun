@@ -26,19 +26,39 @@ import MKTypography from "components/MKTypography";
 import SimpleBlogCard from "examples/Cards/BlogCards/SimpleBlogCard";
 
 function CommunityProducts() {
-  const actionProps = {
-    type: "internal",
-    route: "/pages/landing-pages/coworking",
-    color: "dark",
-    label: "find more",
-  };
   const products = [
     {
-      title: "Campus 6",
+      title: "JPYC HUB [unofficial]",
       image: "/img/discord.jpg",
-      description:
-        "Website visitors today demand a frictionless user expericence. Applies to mobile applications too.",
-      action: { actionProps },
+      description: "Discord上のファンコミュニティです。様々な情報がやり取りされています。",
+      action: {
+        type: "external",
+        route: "https://discord.gg/hhK4fpBXtr",
+        color: "dark",
+        label: "find more",
+      },
+    },
+    {
+      title: "JPYC Bot",
+      image: "/img/jpycbot_twitter.jpg",
+      description: "DeFiでUSDC-JPYCのレートがお得になったときに呟くTwitter botです。",
+      action: {
+        type: "external",
+        route: "https://twitter.com/jpycbot",
+        color: "dark",
+        label: "find more",
+      },
+    },
+    {
+      title: "分散型 CMS HiÐΞ",
+      image: "/img/hide.ac.png",
+      description: "サービス運営に依存しない情報発信とコミュニティ構築ツール。",
+      action: {
+        type: "external",
+        route: "https://hide.ac/",
+        color: "dark",
+        label: "find more",
+      },
     },
   ];
 
@@ -49,7 +69,7 @@ function CommunityProducts() {
           image={`${process.env.PUBLIC_URL}/${item.image}`}
           title={item.title}
           description={item.description}
-          action={actionProps}
+          action={item.action}
         />
       </MKBox>
     </Grid>
@@ -77,6 +97,9 @@ function CommunityProducts() {
           />
           <MKTypography variant="h2" mb={1}>
             Explore community products{" "}
+          </MKTypography>
+          <MKTypography variant="body2" color="text">
+            JPYC社以外のJPYC関連サービスのリンクです
           </MKTypography>
         </Grid>
         <Grid container spacing={3} sx={{ mt: 3 }}>

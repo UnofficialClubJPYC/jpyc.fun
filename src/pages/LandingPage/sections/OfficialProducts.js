@@ -26,12 +26,55 @@ import MKTypography from "components/MKTypography";
 import SimpleBlogCard from "examples/Cards/BlogCards/SimpleBlogCard";
 
 function OfficialProducts() {
-  const actionProps = {
-    type: "internal",
-    route: "/pages/landing-pages/coworking",
-    color: "dark",
-    label: "find more",
-  };
+  const products = [
+    {
+      title: "JPYC HP",
+      image: "/img/jpyc.jp.png",
+      description: "オフィシャルHP",
+      action: {
+        type: "external",
+        route: "https://jpyc.jp/",
+        color: "dark",
+        label: "find more",
+      },
+    },
+    {
+      title: "JPYC Marketplace",
+      image: "/img/app.jpyc.jp.jpg",
+      description: "公式JPYC販売所です",
+      action: {
+        type: "external",
+        route: "https://app.jpyc.jp/",
+        color: "dark",
+        label: "find more",
+      },
+    },
+    {
+      title: "JPYC Grant",
+      image: "/img/jpycgrant.png",
+      description:
+        "JPYC Grantは、JPYCエコシステムに対してビジネス・開発・コミュニティ育成などあらゆる形で貢献していただいた方に対してJPYCを付与する報酬プログラムです。",
+      action: {
+        type: "external",
+        route: "https://jpycgrant.studio.site/",
+        color: "dark",
+        label: "find more",
+      },
+    },
+  ];
+
+  const contents = products.map((item) => (
+    <Grid item xs={12} md={6} lg={4}>
+      <MKBox mt={3}>
+        <SimpleBlogCard
+          image={`${process.env.PUBLIC_URL}/${item.image}`}
+          title={item.title}
+          description={item.description}
+          action={item.action}
+        />
+      </MKBox>
+    </Grid>
+  ));
 
   return (
     <MKBox component="section" py={3}>
@@ -54,74 +97,14 @@ function OfficialProducts() {
             sx={{ mb: 1 }}
           />
           <MKTypography variant="h2" mb={1}>
-            Explore our places in London{" "}
+            Official Contents{" "}
           </MKTypography>
           <MKTypography variant="body2" color="text">
-            If you can&apos;t decide, the answer is no. If two equally difficult paths, choose the
-            one more painful in the short term (pain avoidance is creating an illusion of equality).
+            JPYC社オフィシャルコンテンツへのリンクです。
           </MKTypography>
         </Grid>
         <Grid container spacing={3} sx={{ mt: 3 }}>
-          <Grid item xs={12} md={6} lg={4}>
-            <MKBox mt={3}>
-              <SimpleBlogCard
-                image="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80"
-                title="Campus 6"
-                description="Website visitors today demand a frictionless user expericence. Applies to mobile applications too."
-                action={actionProps}
-              />
-            </MKBox>
-          </Grid>
-          <Grid item xs={12} md={6} lg={4}>
-            <MKBox mt={3}>
-              <SimpleBlogCard
-                image="https://images.unsplash.com/photo-1498677231914-50deb6ba4217?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80"
-                title="Cozy Spots"
-                description="If you're more passionate about founding a business than the business itself technology."
-                action={actionProps}
-              />
-            </MKBox>
-          </Grid>
-          <Grid item xs={12} md={6} lg={4}>
-            <MKBox mt={3}>
-              <SimpleBlogCard
-                image="https://images.unsplash.com/photo-1587578932405-7c740a762f7f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80"
-                title="Home Office"
-                description="Website visitors today demand a frictionless user expericence — especially when using search."
-                action={actionProps}
-              />
-            </MKBox>
-          </Grid>
-          <Grid item xs={12} md={6} lg={4}>
-            <MKBox mt={3}>
-              <SimpleBlogCard
-                image="https://images.unsplash.com/photo-1589884629108-3193400c7cc9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80"
-                title="Virtual Office"
-                description="If you're more passionate about founding a business than the business itself, you can fall into."
-                action={actionProps}
-              />
-            </MKBox>
-          </Grid>
-          <Grid item xs={12} md={6} lg={4}>
-            <MKBox mt={3}>
-              <SimpleBlogCard
-                image="https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80"
-                title="Co-working Spaces"
-                description="Smart money is just dumb money that's been through a crash. Business than the business itself."
-                action={actionProps}
-              />
-            </MKBox>
-          </Grid>
-          <Grid item xs={12} md={6} lg={4}>
-            <MKBox mt={3}>
-              <SimpleBlogCard
-                image="https://images.unsplash.com/photo-1461988625982-7e46a099bf4f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80"
-                title="Private Space"
-                description="Technology is not only the thing that moves the human race forward, but it's the only thing that has."
-                action={actionProps}
-              />
-            </MKBox>
-          </Grid>
+          {contents}
         </Grid>
       </Container>
     </MKBox>
