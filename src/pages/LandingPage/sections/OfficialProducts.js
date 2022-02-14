@@ -67,7 +67,7 @@ function OfficialProducts() {
     <Grid item xs={12} md={6} lg={4}>
       <MKBox mt={3}>
         <SimpleBlogCard
-          image={`${process.env.PUBLIC_URL}/${item.image}`}
+          image={`${process.env.PUBLIC_URL}${item.image}`}
           title={item.title}
           description={item.description}
           action={item.action}
