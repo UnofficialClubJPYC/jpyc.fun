@@ -122,6 +122,28 @@ function CommunityProducts() {
         label: "find more",
       },
     },
+    {
+      title: "Nudge | JPYC",
+      image: "/img/externalLink/nudge.jpyc.png",
+      description: "JPYCとコラボしているクレジットカード。累計決済額に応じてプレゼントが貰えます。",
+      action: {
+        type: "external",
+        route: "https://nudge.cards/jpyc",
+        color: "dark",
+        label: "find more",
+      },
+    },
+    {
+      title: "JPYC Stabilizer",
+      image: "/img/externalLink/stabilizer.png",
+      description: "DeFiでUSDC-JPYCペアの自動取引を行い、JPYCの価格を安定させるDapp。",
+      action: {
+        type: "external",
+        route: "https://nuko973663.github.io/JPYCstabilizer/",
+        color: "dark",
+        label: "find more",
+      },
+    },
   ];
 
   const contents = products.map((item) => (
