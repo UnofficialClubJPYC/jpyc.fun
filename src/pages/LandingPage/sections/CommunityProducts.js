@@ -185,6 +185,8 @@ function CommunityProducts() {
           </MKTypography>
           <MKTypography variant="body2" color="text">
             JPYC社以外のJPYC関連サービスのリンクです。二次流通等はご自身の調査・判断により行ってください。
+            こちらへの掲載希望はGitHub（Issue or Pull
+            Request）かTwitter、Discordなどでご連絡ください。
           </MKTypography>
         </Grid>
         <Grid container spacing={3} sx={{ mt: 3 }}>

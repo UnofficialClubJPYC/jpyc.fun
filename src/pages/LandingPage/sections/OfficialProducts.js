@@ -30,7 +30,8 @@ function OfficialProducts() {
     {
       title: "JPYC HP",
       image: "/img/externalLink/jpyc.jp.png",
-      description: "オフィシャルHP",
+      description:
+        "オフィシャルHP。ページフッターにコントラクトアドレスやMetamaskにcoinを追加できるリンクが載っています。",
       action: {
         type: "external",
         route: "https://jpyc.jp/",
@@ -41,7 +42,8 @@ function OfficialProducts() {
     {
       title: "JPYC Marketplace",
       image: "/img/externalLink/app.jpyc.jp.jpg",
-      description: "公式JPYC販売所です",
+      description:
+        "公式JPYC販売所。銀行振込や暗号資産でJPYCの購入ができる他、JPYCでVプリカギフトの購入が可能",
       action: {
         type: "external",
         route: "https://app.jpyc.jp/",
