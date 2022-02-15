@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/static/js/main.c3f4f524.chunk.js",
-    "main.js.map": "/static/js/main.c3f4f524.chunk.js.map",
+    "main.js": "/static/js/main.6113abb7.chunk.js",
+    "main.js.map": "/static/js/main.6113abb7.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.047ee0bf.js",
     "runtime-main.js.map": "/static/js/runtime-main.047ee0bf.js.map",
-    "static/js/2.6d2b232a.chunk.js": "/static/js/2.6d2b232a.chunk.js",
-    "static/js/2.6d2b232a.chunk.js.map": "/static/js/2.6d2b232a.chunk.js.map",
+    "static/js/2.bfcfe2c9.chunk.js": "/static/js/2.bfcfe2c9.chunk.js",
+    "static/js/2.bfcfe2c9.chunk.js.map": "/static/js/2.bfcfe2c9.chunk.js.map",
     "index.html": "/index.html",
-    "static/js/2.6d2b232a.chunk.js.LICENSE.txt": "/static/js/2.6d2b232a.chunk.js.LICENSE.txt",
+    "static/js/2.bfcfe2c9.chunk.js.LICENSE.txt": "/static/js/2.bfcfe2c9.chunk.js.LICENSE.txt",
     "static/media/bg-about-us.cf9a123e.jpg": "/static/media/bg-about-us.cf9a123e.jpg",
-    "static/media/bg-coworking.06bccc47.jpeg": "/static/media/bg-coworking.06bccc47.jpeg"
+    "static/media/bg-landing.8ac08e20.jpg": "/static/media/bg-landing.8ac08e20.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.047ee0bf.js",
-    "static/js/2.6d2b232a.chunk.js",
-    "static/js/main.c3f4f524.chunk.js"
+    "static/js/2.bfcfe2c9.chunk.js",
+    "static/js/main.6113abb7.chunk.js"
   ]
 }

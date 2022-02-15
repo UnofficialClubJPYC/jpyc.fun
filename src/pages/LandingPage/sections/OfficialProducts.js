@@ -23,13 +23,13 @@ import MKBadge from "components/MKBadge";
 import MKTypography from "components/MKTypography";
 
 // Material Kit 2 PRO React components
-import SimpleBlogCard from "examples/Cards/BlogCards/SimpleBlogCard";
+import LinkCard from "examples/Cards/BlogCards/LinkCard";
 
 function OfficialProducts() {
   const products = [
     {
       title: "JPYC HP",
-      image: "/img/jpyc.jp.png",
+      image: "/img/externalLink/jpyc.jp.png",
       description: "オフィシャルHP",
       action: {
         type: "external",
@@ -40,7 +40,7 @@ function OfficialProducts() {
     },
     {
       title: "JPYC Marketplace",
-      image: "/img/app.jpyc.jp.jpg",
+      image: "/img/externalLink/app.jpyc.jp.jpg",
       description: "公式JPYC販売所です",
       action: {
         type: "external",
@@ -51,7 +51,7 @@ function OfficialProducts() {
     },
     {
       title: "JPYC Grant",
-      image: "/img/jpycgrant.png",
+      image: "/img/externalLink/jpycgrant.png",
       description:
         "JPYC Grantは、JPYCエコシステムに対してビジネス・開発・コミュニティ育成などあらゆる形で貢献していただいた方に対してJPYCを付与する報酬プログラムです。",
       action: {
@@ -66,7 +66,7 @@ function OfficialProducts() {
   const contents = products.map((item) => (
     <Grid item xs={12} md={6} lg={4}>
       <MKBox mt={3}>
-        <SimpleBlogCard
+        <LinkCard
           image={`${process.env.PUBLIC_URL}${item.image}`}
           title={item.title}
           description={item.description}
