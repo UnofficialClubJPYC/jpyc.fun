@@ -36,5 +36,54 @@ Software.
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <script type="text/javascript">
+      var wmouse;
+      var trajectory = [];
+      var lastTraj = 0;
+      const MouseImage = () => {
+        wmouse = new Image(64, 64);
+        var style = wmouse.style;
+        style.position = "fixed";
+        wmouse.src = "%PUBLIC_URL%/img/nuko-cat1.gif";
+        document.body.appendChild(wmouse);
+        if (document.addEventListener) {
+          document.addEventListener("mousemove", MouseMove);
+        } else if (document.attachEvent) {
+          document.attachEvent("onmousemove", MouseMove);
+        }
+        for (let i = 0; i < 10; i++) {
+          trajectory.push({ x: 0, y: 0 });
+        }
+        lastTraj = Date.now();
+      };
+      const MouseMove = (e) => {
+        if (lastTraj + 10 < Date.now()) {
+          trajectory.unshift({ x: e.clientX, y: e.clientY });
+          lastTraj = Date.now();
+        }
+      };
+      window.addEventListener("load", function (event) {
+        MouseImage();
+        setInterval(() => {
+          if (trajectory.length > 1) {
+            coordinate = trajectory.pop();
+            wmouse.style.left = coordinate.x + 10 + "px";
+            wmouse.style.top = coordinate.y + 10 + "px";
+          } else {
+            if (lastTraj + 1000 < Date.now() && trajectory.length < 1000) {
+              let direction = 1;
+              if (Math.random() > 0.5) direction = direction * -1;
+              for (let i = 0; i < 100; i++) {
+                trajectory.unshift({
+                  x: trajectory[0].x + direction * parseInt(Math.random() * 5),
+                  y: trajectory[0].y,
+                });
+              }
+              lastTraj = Date.now();
+            }
+          }
+        }, 33);
+      });
+    </script>
   </body>
 </html>
