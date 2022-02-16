@@ -42,8 +42,15 @@ import Icon from "@mui/material/Icon";
 // Pages
 // import LandingPage from "layouts/pages/landing-page";
 import AboutUs from "layouts/pages/about-us";
+import Shops from "layouts/pages/shops";
 
 const routes = [
+  {
+    icon: <Icon>store</Icon>,
+    name: "JPYC in shops",
+    route: "/pages/shops",
+    component: <Shops />,
+  },
   {
     icon: <Icon>dashboard</Icon>,
     name: "about us",

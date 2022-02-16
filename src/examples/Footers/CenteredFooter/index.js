@@ -104,6 +104,7 @@ function CenteredFooter({ company, links, socials, light }) {
 CenteredFooter.defaultProps = {
   company: { href: "https://jpyc.fun/", name: "非公式JPYCファンクラブ / Unofficial Club JPYC" },
   links: [
+    { href: "/pages/shops", name: "JPYC払いができる店舗" },
     { href: "/pages/about-us", name: "About Us" },
     //    { href: "https://www.creative-tim.com/presentation", name: "Team" },
     //     { href: "https://www.creative-tim.com/templates/react", name: "Products" },

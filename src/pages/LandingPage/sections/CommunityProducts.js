@@ -123,23 +123,23 @@ function CommunityProducts() {
       },
     },
     {
-      title: "Nudge | JPYC",
-      image: "/img/externalLink/nudge.jpyc.png",
-      description: "JPYCとコラボしているクレジットカード。累計決済額に応じてプレゼントが貰えます。",
-      action: {
-        type: "external",
-        route: "https://nudge.cards/jpyc",
-        color: "dark",
-        label: "find more",
-      },
-    },
-    {
       title: "JPYC Stabilizer",
       image: "/img/externalLink/stabilizer.png",
       description: "DeFiでUSDC-JPYCペアの自動取引を行い、JPYCの価格を安定させるDapp。",
       action: {
         type: "external",
         route: "https://nuko973663.github.io/JPYCstabilizer/",
+        color: "dark",
+        label: "find more",
+      },
+    },
+    {
+      title: "JPYCが使えるお店",
+      image: "https://irifune-seikotsuin.com/img/hero1_1200x600.jpg",
+      description: "JPYCで決済ができる実店舗を紹介しています。",
+      action: {
+        type: "internal",
+        route: "pages/shops",
         color: "dark",
         label: "find more",
       },
@@ -185,6 +185,8 @@ function CommunityProducts() {
           </MKTypography>
           <MKTypography variant="body2" color="text">
             JPYC社以外のJPYC関連サービスのリンクです。二次流通等はご自身の調査・判断により行ってください。
+            こちらへの掲載希望はGitHub（Issue or Pull
+            Request）かTwitter、Discordなどでご連絡ください。
           </MKTypography>
         </Grid>
         <Grid container spacing={3} sx={{ mt: 3 }}>

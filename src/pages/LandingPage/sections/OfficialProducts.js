@@ -30,7 +30,8 @@ function OfficialProducts() {
     {
       title: "JPYC HP",
       image: "/img/externalLink/jpyc.jp.png",
-      description: "オフィシャルHP",
+      description:
+        "オフィシャルHP。ページフッターにコントラクトアドレスやMetamaskにcoinを追加できるリンクが載っています。",
       action: {
         type: "external",
         route: "https://jpyc.jp/",
@@ -41,7 +42,8 @@ function OfficialProducts() {
     {
       title: "JPYC Marketplace",
       image: "/img/externalLink/app.jpyc.jp.jpg",
-      description: "公式JPYC販売所です",
+      description:
+        "公式JPYC販売所。銀行振込や暗号資産でJPYCの購入ができる他、JPYCでVプリカギフトの購入が可能",
       action: {
         type: "external",
         route: "https://app.jpyc.jp/",
@@ -57,6 +59,28 @@ function OfficialProducts() {
       action: {
         type: "external",
         route: "https://jpycgrant.studio.site/",
+        color: "dark",
+        label: "find more",
+      },
+    },
+    {
+      title: "Nudge | JPYC",
+      image: "/img/externalLink/nudge.jpyc.png",
+      description: "JPYCとコラボしているクレジットカード。累計決済額に応じてプレゼントが貰えます。",
+      action: {
+        type: "external",
+        route: "https://nudge.cards/jpyc",
+        color: "dark",
+        label: "find more",
+      },
+    },
+    {
+      title: "Links JPYC Bot",
+      image: "/img/externalLink/links.jpyc.bot.png",
+      description: "次世代SNS「Links」で使えるJPYC Bot。Botの利用にはlinksのアプリが必要です。",
+      action: {
+        type: "external",
+        route: "https://links.jpyc.jp/",
         color: "dark",
         label: "find more",
       },
