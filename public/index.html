@@ -32,6 +32,16 @@ Software.
       rel="stylesheet"
     />
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <script>
+      // GitHub Pages での SPA アドレス解決用
+      (function () {
+        const query = window.location.search;
+        if (query.startsWith("?p=")) {
+          const route = decodeURIComponent(query.substr(3));
+          window.history.replaceState(null, null, route);
+        }
+      })();
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
