@@ -39,6 +39,8 @@ Software.
     <script type="text/javascript">
       var wmouse;
       var trajectory = [];
+      var mousePos = { x: 1, y: 1 };
+      var imgPos = { x: 1, y: 1 };
       var lastTraj = 0;
       const MouseImage = () => {
         wmouse = new Image(64, 64);
@@ -57,32 +59,51 @@ Software.
         lastTraj = Date.now();
       };
       const MouseMove = (e) => {
-        if (lastTraj + 10 < Date.now()) {
-          trajectory.unshift({ x: e.clientX, y: e.clientY });
-          lastTraj = Date.now();
-        }
+        mousePos.x = e.clientX;
+        mousePos.y = e.clientY;
+        lastTraj = Date.now();
       };
       window.addEventListener("load", function (event) {
         MouseImage();
         setInterval(() => {
-          if (trajectory.length > 1) {
-            coordinate = trajectory.pop();
-            wmouse.style.left = coordinate.x + 10 + "px";
-            wmouse.style.top = coordinate.y + 10 + "px";
+          let speed = 2;
+          let timeToOsanpo = 1500;
+          let margin = 20;
+          let dx, dy;
+          dx = mousePos.x - imgPos.x;
+          dy = mousePos.y - imgPos.y;
+
+          if (lastTraj + timeToOsanpo > Date.now()) {
+            if (Math.sqrt(dx * dx + dy * dy) > 20) {
+              imgPos.x = imgPos.x + (speed * dx) / Math.sqrt(dx * dx + dy * dy);
+              imgPos.y = imgPos.y + (speed * dy) / Math.sqrt(dx * dx + dy * dy);
+            }
           } else {
-            if (lastTraj + 1000 < Date.now() && trajectory.length < 1000) {
-              let direction = 1;
-              if (Math.random() > 0.5) direction = direction * -1;
+            let direction = { x: 0, y: 0 };
+            if (trajectory.length == 0) {
+              let rnd = Math.random();
+              direction.x = Math.cos(rnd * 2 * Math.PI);
+              direction.y = Math.sin(rnd * 2 * Math.PI);
               for (let i = 0; i < 100; i++) {
+                let step = parseInt(Math.random() * speed);
                 trajectory.unshift({
-                  x: trajectory[0].x + direction * parseInt(Math.random() * 5),
-                  y: trajectory[0].y,
+                  x: direction.x * step,
+                  y: direction.y * step,
                 });
               }
-              lastTraj = Date.now();
             }
+            dp = trajectory.pop();
+            imgPos.x = imgPos.x + dp.x;
+            imgPos.y = imgPos.y + dp.y;
           }
-        }, 33);
+          imgPos.x = imgPos.x < margin ? margin : imgPos.x;
+          imgPos.y = imgPos.y < margin ? margin : imgPos.y;
+          imgPos.x = imgPos.x > window.innerWidth - margin ? window.innerWidth - margin : imgPos.x;
+          imgPos.y =
+            imgPos.y > window.innerHeight - margin ? window.innerHeight - margin : imgPos.y;
+          wmouse.style.left = imgPos.x + 10 + "px";
+          wmouse.style.top = imgPos.y + 10 + "px";
+        }, 15);
       });
     </script>
   </body>

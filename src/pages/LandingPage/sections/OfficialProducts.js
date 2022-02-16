@@ -63,6 +63,28 @@ function OfficialProducts() {
         label: "find more",
       },
     },
+    {
+      title: "Nudge | JPYC",
+      image: "/img/externalLink/nudge.jpyc.png",
+      description: "JPYCとコラボしているクレジットカード。累計決済額に応じてプレゼントが貰えます。",
+      action: {
+        type: "external",
+        route: "https://nudge.cards/jpyc",
+        color: "dark",
+        label: "find more",
+      },
+    },
+    {
+      title: "Links JPYC Bot",
+      image: "/img/externalLink/links.jpyc.bot.png",
+      description: "次世代SNS「Links」で使えるJPYC Bot。Botの利用にはlinksのアプリが必要です。",
+      action: {
+        type: "external",
+        route: "https://links.jpyc.jp/",
+        color: "dark",
+        label: "find more",
+      },
+    },
   ];
 
   const contents = products.map((item) => (
