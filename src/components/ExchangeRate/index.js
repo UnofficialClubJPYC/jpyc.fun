@@ -3,11 +3,11 @@ import { useEffect, useState } from "react";
 import Pair from "../../lib/Pair";
 
 function ExchangeRate() {
-  const JPYC_ADDRESS = "0x6ae7dfc73e0dde2aa99ac063dcf7e8a63265108c";
   const USDC_ADDRESS = "0x2791bca1f2de4661ed88a30c99a7a9449aa84174";
-  const rpcNode = "https://polygon-rpc.com/";
+  const JPYC_ADDRESS = "0x6ae7dfc73e0dde2aa99ac063dcf7e8a63265108c";
+  const RPC_NODE = "https://polygon-rpc.com/";
 
-  const pair = new Pair(USDC_ADDRESS, JPYC_ADDRESS, rpcNode);
+  const pair = new Pair(USDC_ADDRESS, JPYC_ADDRESS, RPC_NODE);
 
   const [exchangeRate, setExchangeRate] = useState(0);
 
