@@ -37,6 +37,7 @@ import DefaultFooter from "examples/Footers/CenteredFooter";
 
 // About Us page sections
 import FeaturesOne from "pages/AboutUs/sections/FeaturesOne";
+import Team from "pages/AboutUs/sections/Team";
 
 // Routes
 import routes from "routes";
@@ -154,6 +155,7 @@ function AboutUs() {
         }}
       >
         <FeaturesOne />
+        <Team />
       </Card>
       <MKBox pt={6} px={1} mt={6}>
         <DefaultFooter content={footerRoutes} />

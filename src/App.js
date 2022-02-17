@@ -29,6 +29,11 @@ import LandingPage from "layouts/pages/landing-page";
 // Material Kit 2 PRO React routes
 import routes from "routes";
 
+// Libs
+import Nuko from "lib/Nuko";
+
+global.Nuko = Nuko;
+
 export default function App() {
   const { pathname } = useLocation();
 

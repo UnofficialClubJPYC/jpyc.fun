@@ -32,16 +32,9 @@ function CommunityProducts() {
       image: "/img/externalLink/discord.jpg",
       twitter: "AITGSamurai",
       description: "Discord上のファンコミュニティです。様々な情報がやり取りされています。",
-      author: {
-        image: "https://pbs.twimg.com/profile_images/1490677469904793601/tC-4Xj2k_400x400.jpg",
-        name: "Anti Internet Tough Guy侍👾㌠",
-        id: "@AITGSamurai",
-      },
       action: {
         type: "external",
         route: "https://discord.gg/hhK4fpBXtr",
-        color: "dark",
-        label: "find more",
       },
     },
     {
@@ -49,16 +42,9 @@ function CommunityProducts() {
       image: "/img/externalLink/jpycbot_twitter.jpg",
       twitter: "jpycbot",
       description: "DeFiでUSDC-JPYCのレートがお得になったときに呟くTwitter bot",
-      author: {
-        image: "https://pbs.twimg.com/profile_images/1476142347297894405/q4lFDNBa_400x400.png",
-        name: "Nuko.eth",
-        id: "@nuko973663",
-      },
       action: {
         type: "external",
         route: "https://twitter.com/jpycbot",
-        color: "dark",
-        label: "find more",
       },
     },
     {
@@ -69,8 +55,6 @@ function CommunityProducts() {
       action: {
         type: "external",
         route: "https://hide.ac/",
-        color: "dark",
-        label: "find more",
       },
     },
     {
@@ -81,8 +65,6 @@ function CommunityProducts() {
       action: {
         type: "external",
         route: "https://jpyc.foxytanuki.dev/",
-        color: "dark",
-        label: "find more",
       },
     },
     {
@@ -93,8 +75,6 @@ function CommunityProducts() {
       action: {
         type: "external",
         route: "https://www.coinshop.jp/bargain-sale/",
-        color: "dark",
-        label: "find more",
       },
     },
     {
@@ -105,8 +85,6 @@ function CommunityProducts() {
       action: {
         type: "external",
         route: "https://www.coinshop.jp/",
-        color: "dark",
-        label: "find more",
       },
     },
     {
@@ -118,19 +96,16 @@ function CommunityProducts() {
       action: {
         type: "external",
         route: "https://jpyc-analytics.com/",
-        color: "dark",
-        label: "find more",
       },
     },
     {
       title: "JPYC Stabilizer",
       image: "/img/externalLink/stabilizer.png",
+      twitter: "nuko973663",
       description: "DeFiでUSDC-JPYCペアの自動取引を行い、JPYCの価格を安定させるDapp。",
       action: {
         type: "external",
         route: "https://nuko973663.github.io/JPYCstabilizer/",
-        color: "dark",
-        label: "find more",
       },
     },
     {
@@ -140,8 +115,6 @@ function CommunityProducts() {
       action: {
         type: "internal",
         route: "pages/shops",
-        color: "dark",
-        label: "find more",
       },
     },
   ];
@@ -153,6 +126,7 @@ function CommunityProducts() {
           image={`${process.env.PUBLIC_URL}${item.image}`}
           title={item.title}
           description={item.description}
+          twitter={item.twitter}
           author={item.author}
           action={item.action}
         />
