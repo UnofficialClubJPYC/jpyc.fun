@@ -30,59 +30,54 @@ function OfficialProducts() {
     {
       title: "JPYC HP",
       image: "/img/externalLink/jpyc.jp.png",
+      twitter: "jcam_official",
       description:
         "オフィシャルHP。ページフッターにコントラクトアドレスやMetamaskにcoinを追加できるリンクが載っています。",
       action: {
         type: "external",
         route: "https://jpyc.jp/",
-        color: "dark",
-        label: "find more",
       },
     },
     {
       title: "JPYC Marketplace",
       image: "/img/externalLink/app.jpyc.jp.jpg",
+      twitter: "jcam_official",
       description:
         "公式JPYC販売所。銀行振込や暗号資産でJPYCの購入ができる他、JPYCでVプリカギフトの購入が可能",
       action: {
         type: "external",
         route: "https://app.jpyc.jp/",
-        color: "dark",
-        label: "find more",
       },
     },
     {
       title: "JPYC Grant",
       image: "/img/externalLink/jpycgrant.png",
+      twitter: "jcam_official",
       description:
         "JPYC Grantは、JPYCエコシステムに対してビジネス・開発・コミュニティ育成などあらゆる形で貢献していただいた方に対してJPYCを付与する報酬プログラムです。",
       action: {
         type: "external",
         route: "https://jpycgrant.studio.site/",
-        color: "dark",
-        label: "find more",
       },
     },
     {
       title: "Nudge | JPYC",
       image: "/img/externalLink/nudge.jpyc.png",
+      twitter: "nudgecard",
       description: "JPYCとコラボしているクレジットカード。累計決済額に応じてプレゼントが貰えます。",
       action: {
         type: "external",
         route: "https://nudge.cards/jpyc",
-        color: "dark",
-        label: "find more",
       },
     },
     {
       title: "Links JPYC Bot",
       image: "/img/externalLink/links.jpyc.bot.png",
+      twitter: "LinksBTC",
       description: "次世代SNS「Links」で使えるJPYC Bot。Botの利用にはlinksのアプリが必要です。",
       action: {
         type: "external",
         route: "https://links.jpyc.jp/",
-        color: "dark",
-        label: "find more",
       },
     },
   ];
@@ -95,6 +90,7 @@ function OfficialProducts() {
           title={item.title}
           description={item.description}
           action={item.action}
+          twitter={item.twitter}
         />
       </MKBox>
     </Grid>

@@ -16,21 +16,40 @@ Coded by www.creative-tim.com
 // @mui material components
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
+// import Tooltip from "@mui/material/Tooltip";
 
 // Material Kit 2 PRO React components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 
 // Material Kit 2 PRO React examples
-import HorizontalTeamCard from "examples/Cards/TeamCards/HorizontalTeamCard";
-
-// Images
-import team1 from "assets/images/team-5.jpg";
-import team2 from "assets/images/bruce-mars.jpg";
-import team3 from "assets/images/ivana-squares.jpg";
-import team4 from "assets/images/ivana-square.jpg";
+// import HorizontalTeamCard from "examples/Cards/TeamCards/HorizontalTeamCard";
+import TeamCard from "examples/Cards/TeamCards/TeamCard";
 
 function Team() {
+  const contributors = [
+    { id: "nuko973663", description: "WebSite" },
+    { id: "akanexinfo", description: "Cats" },
+    { id: "grifonbk", description: "JPYC 1st anniversary gift" },
+    { id: "AITGSamurai", description: "Discord" },
+  ];
+
+  // randomize contributers order
+  const newArray = [];
+  while (contributors.length > 0) {
+    const n = contributors.length;
+    const k = Math.floor(Math.random() * n);
+
+    newArray.push(contributors[k]);
+    contributors.splice(k, 1);
+  }
+
+  const contents = newArray.map((item) => (
+    <Grid item xs={12} md={6} lg={4}>
+      <TeamCard id={item.id} description={item.description} />
+    </Grid>
+  ));
+
   return (
     <MKBox
       component="section"
@@ -45,55 +64,16 @@ function Team() {
         <Grid container>
           <Grid item xs={12} md={8} sx={{ mb: 6 }}>
             <MKTypography variant="h3" color="white">
-              The Executive Team
+              Contributors
             </MKTypography>
             <MKTypography variant="body2" color="white" opacity={0.8}>
-              There&apos;s nothing I really wanted to do in life that I wasn&apos;t able to get good
-              at. That&apos;s my skill.
+              コントリビューター募集しています！ ↓ランダムオーダーです↓
             </MKTypography>
           </Grid>
         </Grid>
-        <Grid container spacing={3}>
-          <Grid item xs={12} lg={6}>
-            <MKBox mb={1}>
-              <HorizontalTeamCard
-                image={team1}
-                name="Emma Roberts"
-                position={{ color: "info", label: "UI Designer" }}
-                description="Artist is a term applied to a person who engages in an activity deemed to be an art."
-              />
-            </MKBox>
-          </Grid>
-          <Grid item xs={12} lg={6}>
-            <MKBox mb={1}>
-              <HorizontalTeamCard
-                image={team2}
-                name="William Pearce"
-                position={{ color: "info", label: "Boss" }}
-                description="Artist is a term applied to a person who engages in an activity deemed to be an art."
-              />
-            </MKBox>
-          </Grid>
-          <Grid item xs={12} lg={6}>
-            <MKBox mb={{ xs: 1, lg: 0 }}>
-              <HorizontalTeamCard
-                image={team3}
-                name="Ivana Flow"
-                position={{ color: "info", label: "Athlete" }}
-                description="Artist is a term applied to a person who engages in an activity deemed to be an art."
-              />
-            </MKBox>
-          </Grid>
-          <Grid item xs={12} lg={6}>
-            <MKBox mb={{ xs: 1, lg: 0 }}>
-              <HorizontalTeamCard
-                image={team4}
-                name="Marquez Garcia"
-                position={{ color: "info", label: "JS Developer" }}
-                description="Artist is a term applied to a person who engages in an activity deemed to be an art."
-              />
-            </MKBox>
-          </Grid>
+
+        <Grid container spacing={3} mt={6}>
+          {contents}
         </Grid>
       </Container>
     </MKBox>

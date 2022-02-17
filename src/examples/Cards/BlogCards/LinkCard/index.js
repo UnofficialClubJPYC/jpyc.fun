@@ -16,6 +16,7 @@ Coded by www.creative-tim.com
 
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
+import React, { Component } from "react";
 
 // react-router components
 import { Link } from "react-router-dom";
@@ -32,83 +33,117 @@ import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 import MKAvatar from "components/MKAvatar";
 
-function LinkCard({ image, title, description, action, author }) {
-  const imageTemplate = (
-    <>
-      <MKBox
-        component="img"
-        src={image}
-        alt={title}
-        borderRadius="lg"
-        shadow="md"
-        width="100%"
-        position="relative"
-        zIndex={1}
-      />
-      <MKBox
-        borderRadius="lg"
-        shadow="md"
-        width="100%"
-        height="100%"
-        position="absolute"
-        left={0}
-        top={0}
-        sx={{
-          backgroundImage: `url(${image})`,
-          transform: "scale(0.94)",
-          filter: "blur(12px)",
-          backgroundSize: "cover",
-        }}
-      />
-    </>
-  );
+class LinkCard extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: {},
+      avator: false,
+    };
 
-  return (
-    <Card>
-      <MKBox position="relative" borderRadius="lg" mx={2} mt={-3}>
-        {action.type === "internal" ? (
-          <Link to={action.route}>{imageTemplate}</Link>
-        ) : (
-          <MuiLink href={action.route} target="_blank" rel="noreferrer">
-            {imageTemplate}
-          </MuiLink>
-        )}
-      </MKBox>
-      <MKBox p={3} mt={-2}>
-        <MKTypography display="inline" variant="h5" textTransform="capitalize" fontWeight="regular">
+    if (props.twitter !== "") {
+      global.Nuko.twitterUserInfo(props.twitter).then((data) => {
+        this.setState({ user: data, avator: true });
+      });
+    }
+  }
+
+  render() {
+    const { user, avator } = this.state;
+    const { image, title, description, action } = this.props;
+    const imageTemplate = (
+      <>
+        <MKBox
+          component="img"
+          src={image}
+          alt={title}
+          borderRadius="lg"
+          shadow="md"
+          width="100%"
+          position="relative"
+          zIndex={1}
+        />
+        <MKBox
+          borderRadius="lg"
+          shadow="md"
+          width="100%"
+          height="100%"
+          position="absolute"
+          left={0}
+          top={0}
+          sx={{
+            backgroundImage: `url(${image})`,
+            transform: "scale(0.94)",
+            filter: "blur(12px)",
+            backgroundSize: "cover",
+          }}
+        />
+      </>
+    );
+
+    return (
+      <Card>
+        <MKBox position="relative" borderRadius="lg" mx={2} mt={-3}>
           {action.type === "internal" ? (
-            <Link to={action.route}>{title}</Link>
+            <Link to={action.route}>{imageTemplate}</Link>
           ) : (
             <MuiLink href={action.route} target="_blank" rel="noreferrer">
-              {title}
+              {imageTemplate}
             </MuiLink>
           )}
-        </MKTypography>
-        <MKBox mt={1} mb={3}>
-          <MKTypography variant="body2" component="p" color="text">
-            {description}
-          </MKTypography>
         </MKBox>
-        {author && (
-          <MKBox display="flex" alignItems="center" mt={3}>
-            <MKAvatar src={author.image} alt={author.name} shadow="md" variant="circular" />
-            <MKBox pl={2} lineHeight={0}>
-              <MKTypography component="h6" variant="button" fontWeight="medium" gutterBottom>
-                {author.name}
-              </MKTypography>
-              <MKTypography variant="caption" color="text">
-                {author.id}
-              </MKTypography>
-            </MKBox>
+        <MKBox p={3} mt={-2}>
+          <MKTypography
+            display="inline"
+            variant="h5"
+            textTransform="capitalize"
+            fontWeight="regular"
+          >
+            {action.type === "internal" ? (
+              <Link to={action.route}>{title}</Link>
+            ) : (
+              <MuiLink href={action.route} target="_blank" rel="noreferrer">
+                {title}
+              </MuiLink>
+            )}
+          </MKTypography>
+          <MKBox mt={1} mb={3}>
+            <MKTypography variant="body2" component="p" color="text">
+              {description}
+            </MKTypography>
           </MKBox>
-        )}
-      </MKBox>
-    </Card>
-  );
+          {avator && (
+            <MuiLink
+              href={`https://twitter.com/${user.screen_name}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <MKBox display="flex" alignItems="center" mt={3}>
+                <MKAvatar
+                  src={user.profile_image_url_https}
+                  alt={user.name}
+                  shadow="md"
+                  variant="circular"
+                />
+                <MKBox pl={2} lineHeight={0}>
+                  <MKTypography component="h6" variant="button" fontWeight="medium" gutterBottom>
+                    {user.name}
+                  </MKTypography>
+                  <MKTypography variant="caption" color="text">
+                    {user.screen_name}
+                  </MKTypography>
+                </MKBox>
+              </MKBox>
+            </MuiLink>
+          )}
+        </MKBox>
+      </Card>
+    );
+  }
 }
 
 LinkCard.defaultProps = {
-  author: false,
+  twitter: "",
 };
 
 // Typechecking props for the SimpleBlogCard
@@ -116,28 +151,10 @@ LinkCard.propTypes = {
   image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  author: PropTypes.oneOfType([
-    PropTypes.shape({
-      image: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      date: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).isRequired,
-    }),
-    PropTypes.bool,
-  ]),
+  twitter: PropTypes.string,
   action: PropTypes.shape({
     type: PropTypes.oneOf(["external", "internal"]).isRequired,
     route: PropTypes.string.isRequired,
-    color: PropTypes.oneOf([
-      "primary",
-      "secondary",
-      "info",
-      "success",
-      "warning",
-      "error",
-      "dark",
-      "light",
-    ]),
-    label: PropTypes.string.isRequired,
   }).isRequired,
 };
 
