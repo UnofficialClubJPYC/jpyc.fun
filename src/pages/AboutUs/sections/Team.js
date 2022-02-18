@@ -32,6 +32,7 @@ function Team() {
     { id: "akanexinfo", description: "Cats" },
     { id: "grifonbk", description: "JPYC 1st anniversary gift" },
     { id: "AITGSamurai", description: "Discord" },
+    { id: "foxytanuki", description: "commiter" },
   ];
 
   // randomize contributers order

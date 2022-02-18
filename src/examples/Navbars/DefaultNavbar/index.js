@@ -489,6 +489,7 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
             pl={relative || transparent ? 0 : { xs: 0, lg: 1 }}
           >
             <MKTypography variant="button" fontWeight="regular" color={light ? "white" : "dark"}>
+              {"　"}
               <ExchangeRate />
             </MKTypography>
           </MKBox>
