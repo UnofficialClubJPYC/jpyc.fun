@@ -109,6 +109,16 @@ function CommunityProducts() {
       },
     },
     {
+      title: "ArtiStake",
+      image: "/img/externalLink/artistake.tokyo.jpg",
+      twitter: "ArtiStake_",
+      description: "JPYCでアーティストに投げ銭ができるサイト",
+      action: {
+        type: "external",
+        route: "https://nuko973663.github.io/JPYCstabilizer/",
+      },
+    },
+    {
       title: "JPYCが使えるお店",
       image: "https://irifune-seikotsuin.com/img/hero1_1200x600.jpg",
       description: "JPYCで決済ができる実店舗を紹介しています。",
