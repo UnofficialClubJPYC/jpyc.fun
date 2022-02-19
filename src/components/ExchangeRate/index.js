@@ -44,7 +44,7 @@ function ExchangeRate({ color, exchangeRate, setExchangeRate }) {
             <MKAvatar src={logoUSDC} alt="logoJPYC" size="xxs" />
             <MKAvatar src={logoJPYC} alt="logoUSDC" size="xxs" />
           </MuiAvatarGroup>
-          <MKTypography variant="button" fontWeight="regular" color={color}>
+          <MKTypography variant="button" fontWeight="regular" color={color} ml={0.25}>
             {rate}
           </MKTypography>
         </Grid>
