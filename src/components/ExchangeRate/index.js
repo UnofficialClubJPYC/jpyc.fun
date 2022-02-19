@@ -14,8 +14,8 @@ import MKTypography from "components/MKTypography";
 import Pair from "../../lib/Pair";
 
 // Images
-import logoJPYC from "../../assets/images/logos/small-logos/logo-jpyc.svg";
 import logoUSDC from "../../assets/images/logos/small-logos/logo-usdc.svg";
+import logoJPYC from "../../assets/images/logos/small-logos/logo-jpyc.svg";
 
 function ExchangeRate({ color, exchangeRate, setExchangeRate }) {
   const USDC_ADDRESS = "0x2791bca1f2de4661ed88a30c99a7a9449aa84174";
@@ -31,13 +31,6 @@ function ExchangeRate({ color, exchangeRate, setExchangeRate }) {
     // Input: 122.818747
     return Math.ceil(_exchangeRate * 100) / 100;
   }
-
-  useEffect(() => {
-    pair.getExchangeRate().then((rate) => {
-      const roundedRate = formatExchangeRate(rate);
-      setExchangeRate(roundedRate);
-    });
-  });
 
   /* Return the component that displays the exchange rate: USDC/JPYC.
    * @param {number} rate - Exchange rate to be rounded down.
@@ -61,6 +54,13 @@ function ExchangeRate({ color, exchangeRate, setExchangeRate }) {
   }
   USDCJPYCRate.defaultProps = { rate: exchangeRate };
   USDCJPYCRate.propTypes = { rate: PropTypes.number };
+
+  useEffect(() => {
+    pair.getExchangeRate().then((rate) => {
+      const roundedRate = formatExchangeRate(rate);
+      setExchangeRate(roundedRate);
+    });
+  });
 
   const renderExchangeRate = () => {
     const isFetched = exchangeRate !== 0;
