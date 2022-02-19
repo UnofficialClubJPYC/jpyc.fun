@@ -557,7 +557,14 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
           borderRadius="xl"
           px={transparent ? 2 : 0}
         >
-          {mobileView && <DefaultNavbarMobile routes={routes} open={mobileNavbar} />}
+          {mobileView && (
+            <DefaultNavbarMobile
+              routes={routes}
+              open={mobileNavbar}
+              exchangeRate={exchangeRate}
+              setExchangeRate={setExchangeRate}
+            />
+          )}
         </MKBox>
       </MKBox>
       {dropdownMenu}
