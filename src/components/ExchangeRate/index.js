@@ -47,9 +47,9 @@ function ExchangeRate({ color, exchangeRate, setExchangeRate }) {
       <MKBox component="div">
         {/* <Container> */}
         <Grid container alignItems="center">
-          <MuiAvatarGroup spacing={12}>
-            <MKAvatar src={logoUSDC} alt="logoJPYC" size="xs" />
-            <MKAvatar src={logoJPYC} alt="logoUSDC" size="xs" />
+          <MuiAvatarGroup spacing={8}>
+            <MKAvatar src={logoUSDC} alt="logoJPYC" size="xxs" />
+            <MKAvatar src={logoJPYC} alt="logoUSDC" size="xxs" />
           </MuiAvatarGroup>
           <MKTypography variant="button" fontWeight="regular" color={color}>
             {rate}
