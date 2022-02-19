@@ -485,13 +485,12 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
           </MKBox>
           <MKBox
             lineHeight={1}
+            display={{ xs: "none", lg: "flex" }}
             py={transparent ? 1.5 : 0.75}
-            pl={relative || transparent ? 0 : { xs: 0, lg: 1 }}
+            mx={2}
+            p={1}
           >
-            <MKTypography variant="button" fontWeight="regular" color={light ? "white" : "dark"}>
-              {"　"}
-              <ExchangeRate />
-            </MKTypography>
+            <ExchangeRate color={light ? "white" : "dark"} />
           </MKBox>
           <MKBox
             color="inherit"
