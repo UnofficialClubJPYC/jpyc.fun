@@ -50,6 +50,17 @@ function OfficialProducts() {
       },
     },
     {
+      title: "TipJPYC",
+      image: "/img/externalLink/TipJPYC.webp",
+      twitter: "tipjpyc",
+      description:
+        "前払式支払手段である JPYC を Twitter 上で投げ銭できるサービスです！JPYC株式会社が発行する JPYC をサービスに入金することで Twitter にアカウントがある人であれば誰にでも投げ銭できるようになります。",
+      action: {
+        type: "external",
+        route: "https://note.com/tipjpyc/n/nbc48a7a0a84e",
+      },
+    },
+    {
       title: "JPYC Grant",
       image: "/img/externalLink/jpycgrant.png",
       twitter: "jcam_official",

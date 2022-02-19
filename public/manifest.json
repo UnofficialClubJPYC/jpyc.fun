@@ -1,11 +1,11 @@
 {
-  "short_name": "Material Kit",
-  "name": "Material Kit 2 PRO React",
+  "short_name": "JPYC.FUN",
+  "name": "Unofficial Club JPYC",
   "icons": [
     {
-      "src": "favicon.png",
+      "src": "favicon.svg",
       "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/png"
+      "type": "image/svg+xml"
     }
   ],
   "start_url": ".",
