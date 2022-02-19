@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import PropTypes from "prop-types";
 
 // @mui material components
@@ -17,14 +17,12 @@ import Pair from "../../lib/Pair";
 import logoJPYC from "../../assets/images/logos/small-logos/logo-jpyc.svg";
 import logoUSDC from "../../assets/images/logos/small-logos/logo-usdc.svg";
 
-function ExchangeRate({ color }) {
+function ExchangeRate({ color, exchangeRate, setExchangeRate }) {
   const USDC_ADDRESS = "0x2791bca1f2de4661ed88a30c99a7a9449aa84174";
   const JPYC_ADDRESS = "0x6ae7dfc73e0dde2aa99ac063dcf7e8a63265108c";
   const RPC_NODE = "https://polygon-rpc.com/";
 
   const pair = new Pair(USDC_ADDRESS, JPYC_ADDRESS, RPC_NODE);
-
-  const [exchangeRate, setExchangeRate] = useState(0);
 
   /* Round down exchange rate at the second decimal places.
    * @param {number} _exchangeRate - Exchange rate to be rounded down.
@@ -41,6 +39,9 @@ function ExchangeRate({ color }) {
     });
   });
 
+  /* Return the component that displays the exchange rate: USDC/JPYC.
+   * @param {number} rate - Exchange rate to be rounded down.
+   */
   function USDCJPYCRate({ rate }) {
     return (
       <MKBox component="div">
@@ -72,6 +73,8 @@ function ExchangeRate({ color }) {
 ExchangeRate.defaultProps = { color: "dark" };
 ExchangeRate.propTypes = {
   color: PropTypes.oneOf(["white", "dark", "text"]),
+  exchangeRate: PropTypes.number.isRequired,
+  setExchangeRate: PropTypes.func.isRequired,
 };
 
 export default ExchangeRate;

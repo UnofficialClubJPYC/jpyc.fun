@@ -56,6 +56,7 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
   const [arrowRef, setArrowRef] = useState(null);
   const [mobileNavbar, setMobileNavbar] = useState(false);
   const [mobileView, setMobileView] = useState(false);
+  const [exchangeRate, setExchangeRate] = useState(0);
 
   const openMobileNavbar = () => setMobileNavbar(!mobileNavbar);
 
@@ -490,7 +491,11 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
             mx={2}
             p={1}
           >
-            <ExchangeRate color={light ? "white" : "dark"} />
+            <ExchangeRate
+              color={light ? "white" : "dark"}
+              exchangeRate={exchangeRate}
+              setExchangeRate={setExchangeRate}
+            />
           </MKBox>
           <MKBox
             color="inherit"
