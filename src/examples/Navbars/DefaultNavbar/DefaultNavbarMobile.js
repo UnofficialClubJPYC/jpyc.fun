@@ -24,6 +24,7 @@ import PropTypes from "prop-types";
 // @mui material components
 import Collapse from "@mui/material/Collapse";
 import MuiLink from "@mui/material/Link";
+import { Divider } from "@mui/material";
 
 // Material Kit 2 PRO React components
 import MKBox from "components/MKBox";
@@ -32,7 +33,10 @@ import MKTypography from "components/MKTypography";
 // Material Kit 2 PRO React examples
 import DefaultNavbarDropdown from "examples/Navbars/DefaultNavbar/DefaultNavbarDropdown";
 
-function DefaultNavbarMobile({ routes, open }) {
+// Self-made components
+import ExchangeRate from "components/ExchangeRate";
+
+function DefaultNavbarMobile({ routes, open, exchangeRate, setExchangeRate }) {
   const [collapse, setCollapse] = useState("");
 
   const handleSetCollapse = (name) => (collapse === name ? setCollapse(false) : setCollapse(name));
@@ -152,6 +156,14 @@ function DefaultNavbarMobile({ routes, open }) {
     <Collapse in={Boolean(open)} timeout="auto" unmountOnExit>
       <MKBox width="calc(100% + 1.625rem)" my={2} ml={-2}>
         {renderNavbarItems}
+        <Divider />
+        <MKBox lineHeight={1} pt="10" mx={2} p={1}>
+          <ExchangeRate
+            color="text"
+            exchangeRate={exchangeRate}
+            setExchangeRate={setExchangeRate}
+          />
+        </MKBox>
       </MKBox>
     </Collapse>
   );
@@ -161,6 +173,8 @@ function DefaultNavbarMobile({ routes, open }) {
 DefaultNavbarMobile.propTypes = {
   routes: PropTypes.arrayOf(PropTypes.object).isRequired,
   open: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]).isRequired,
+  exchangeRate: PropTypes.number.isRequired,
+  setExchangeRate: PropTypes.func.isRequired,
 };
 
 export default DefaultNavbarMobile;

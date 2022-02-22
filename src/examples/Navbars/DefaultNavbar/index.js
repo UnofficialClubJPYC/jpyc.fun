@@ -56,6 +56,7 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
   const [arrowRef, setArrowRef] = useState(null);
   const [mobileNavbar, setMobileNavbar] = useState(false);
   const [mobileView, setMobileView] = useState(false);
+  const [exchangeRate, setExchangeRate] = useState(0);
 
   const openMobileNavbar = () => setMobileNavbar(!mobileNavbar);
 
@@ -485,13 +486,16 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
           </MKBox>
           <MKBox
             lineHeight={1}
+            display={{ xs: "none", lg: "flex" }}
             py={transparent ? 1.5 : 0.75}
-            pl={relative || transparent ? 0 : { xs: 0, lg: 1 }}
+            mx={2}
+            p={1}
           >
-            <MKTypography variant="button" fontWeight="regular" color={light ? "white" : "dark"}>
-              {"　"}
-              <ExchangeRate />
-            </MKTypography>
+            <ExchangeRate
+              color={light ? "white" : "dark"}
+              exchangeRate={exchangeRate}
+              setExchangeRate={setExchangeRate}
+            />
           </MKBox>
           <MKBox
             color="inherit"
@@ -553,7 +557,14 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
           borderRadius="xl"
           px={transparent ? 2 : 0}
         >
-          {mobileView && <DefaultNavbarMobile routes={routes} open={mobileNavbar} />}
+          {mobileView && (
+            <DefaultNavbarMobile
+              routes={routes}
+              open={mobileNavbar}
+              exchangeRate={exchangeRate}
+              setExchangeRate={setExchangeRate}
+            />
+          )}
         </MKBox>
       </MKBox>
       {dropdownMenu}
