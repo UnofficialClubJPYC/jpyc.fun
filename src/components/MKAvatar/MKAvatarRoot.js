@@ -35,6 +35,13 @@ export default styled(Avatar)(({ theme, ownerState }) => {
   let sizeValue;
 
   switch (size) {
+    case "xxs":
+      sizeValue = {
+        width: pxToRem(20),
+        height: pxToRem(20),
+        fontSize: fontSize.xs,
+      };
+      break;
     case "xs":
       sizeValue = {
         width: pxToRem(24),
