@@ -88,6 +88,16 @@ function CommunityProducts() {
       },
     },
     {
+      title: "JPYCぷち販売所",
+      image: "/img/externalLink/jpyc-puchi.studio.site.jpg",
+      twitter: "web5_",
+      description: "JPYCを少額からご購入いただけます",
+      action: {
+        type: "external",
+        route: "https://jpyc-puchi.studio.site/",
+      },
+    },
+    {
       title: "JPYC Analytics",
       image: "/img/externalLink/jpyc-analytics.com.png",
       twitter: "visvirial",
@@ -106,6 +116,18 @@ function CommunityProducts() {
       action: {
         type: "external",
         route: "https://nuko973663.github.io/JPYCstabilizer/",
+      },
+    },
+    {
+      title: "JPYC-USDC pair on Avalanche",
+      image: "/img/externalLink/traderjoe.jpg",
+      twitter: "traderjoe_xyz",
+      description:
+        "Swapする場合はTradeメニューでJPYCのコントラクトアドレスを入力してください。\n0x431D5dfF03120AFA4bDf332c61A6e1766eF37BDB",
+      action: {
+        type: "external",
+        route:
+          "https://traderjoexyz.com/pool/0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E/0x431D5dfF03120AFA4bDf332c61A6e1766eF37BDB#/",
       },
     },
     {
