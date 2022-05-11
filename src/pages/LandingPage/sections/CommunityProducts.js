@@ -68,26 +68,6 @@ function CommunityProducts() {
       },
     },
     {
-      title: "JPYC特売所(円→JPYC) / 非公式",
-      image: "/img/externalLink/coinshop.jp.sale.png",
-      twitter: "JPYC_unofficial",
-      description: "本家よりお得に、JPYCを購入出来ます",
-      action: {
-        type: "external",
-        route: "https://www.coinshop.jp/bargain-sale/",
-      },
-    },
-    {
-      title: "JPYC買取所",
-      image: "/img/externalLink/coinshop.jp.png",
-      twitter: "JPYC_exchange",
-      description: "非公式JPYC買取所",
-      action: {
-        type: "external",
-        route: "https://www.coinshop.jp/",
-      },
-    },
-    {
       title: "JPYCぷち販売所",
       image: "/img/externalLink/jpyc-puchi.studio.site.jpg",
       twitter: "web5_",
